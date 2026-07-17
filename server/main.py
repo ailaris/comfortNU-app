@@ -9,16 +9,14 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
 from database import Base, engine, get_db
+from seed import seed_readings
 import models
 import schemas
-import os
-import uvicorn
 
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
-    async with engine.begin() as connection:
-        await connection.run_sync(Base.metadata.create_all)
+    await seed_readings()
     try:
         yield
     finally:
@@ -29,9 +27,9 @@ app = FastAPI(title="NU Atrium Comfort API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[settings.frontend_url],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["*"],
 )
 
@@ -223,8 +221,3 @@ async def delete_report(
     report = await find_report(report_id, db)
     await db.delete(report)
     await db.commit()
-
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))
-    uvicorn.run("main:app", host="0.0.0.0", port=port)
