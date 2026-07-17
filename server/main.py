@@ -11,6 +11,8 @@ from config import settings
 from database import Base, engine, get_db
 import models
 import schemas
+import os
+import uvicorn
 
 
 @asynccontextmanager
@@ -27,9 +29,9 @@ app = FastAPI(title="NU Atrium Comfort API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.frontend_url],
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
@@ -221,3 +223,8 @@ async def delete_report(
     report = await find_report(report_id, db)
     await db.delete(report)
     await db.commit()
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
