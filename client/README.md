@@ -1,34 +1,30 @@
-# React + TypeScript + Vite
+# Atrium Environmental Monitoring Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A sleek, responsive, and real-time frontend dashboard designed to monitor and display critical environmental metrics—including temperature, brightness, and noise levels—within the atrium. It features interactive, chronologically sorted data visualizations to compare internal conditions with outdoor environments.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Interactive Temperature Comparison:** Visualizes internal Atrium temperatures vs. Outside ambient metrics using responsive, smooth-line charts.
+- **Clean & Minimalist UI:** Designed with a cool-toned, minimalist aesthetic using a curated palette of grays, indigos, and light blues.
+- **Robust Time-Series Rendering:** Chronologically sorted timeline mapping to ensure precise, gap-free rendering of sensor data.
+- **Environmental Metrics Tracking:** Built to easily scale for displaying other environmental indicators like brightness and noise level trends.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🛠️ Tech Stack
 
-Note: This will impact Vite dev & build performances.
+- **Framework:** React / Next.js (TypeScript)
+- **Styling:** Tailwind CSS / Custom CSS
+- **Charts & Visuals:** Recharts (Responsive Line Charts)
+- **Icons:** Lucide React (or your icon library of choice)
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 📦 Getting Started
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd <project-folder-name>
 ```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
