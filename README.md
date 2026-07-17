@@ -1,7 +1,7 @@
 # comfortNU app 
 
 A complete full-stack IoT-dashboard application designed to monitor, track, and analyze environmental metrics—including temperature, brightness, and noise levels—within an atrium. The system compares real-time and historical internal data with outdoor ambient conditions using a sleek, minimalist interface.
-
+Link: https://comfort-nu-app.vercel.app/
 ---
 
 ## 🏗️ System Architecture & Tech Stack
