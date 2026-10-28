@@ -1,6 +1,6 @@
 # comfortNU app 
 
-A complete full-stack IoT-dashboard application designed to monitor, track, and analyze environmental metrics—including temperature, brightness, and noise levels—within an atrium. The system compares real-time and historical internal data with outdoor ambient conditions using a sleek, minimalist interface.
+A complete full-stack IoT-dashboard application designed to monitor, track, and analyze environmental metrics - including temperature, brightness, and noise levels-within an atrium. The system compares real-time and historical internal data with outdoor ambient conditions using a sleek, minimalist interface.
 Link: https://comfort-nu-app.vercel.app/
 ---
 
@@ -8,8 +8,8 @@ Link: https://comfort-nu-app.vercel.app/
 
 This repository is organized as a monorepo containing both the frontend client and the backend server:
 
-* **Frontend (`/frontend`):** React, TypeScript, Tailwind CSS, and Recharts. Designed with a clean, cool-toned aesthetic (grays, light blues, and indigos).
-* **Backend (`/backend`):** FastAPI (Python), SQLite (or PostgreSQL), and Pydantic. Handles data ingestion, calculates daily aggregates, and serves historical logs.
+* **Frontend (`/client`):** React, TypeScript, Tailwind CSS, and Recharts. Designed with a clean, cool-toned aesthetic (grays, light blues, and indigos).
+* **Backend (`/server`):** FastAPI (Python), SQLite (or PostgreSQL), and Pydantic. Handles data ingestion, calculates daily aggregates, and serves historical logs.
 
 ---
 
@@ -26,14 +26,14 @@ This repository is organized as a monorepo containing both the frontend client a
 ## 📁 Repository Structure
 
 ```text
-├── backend/                  # FastAPI Application
+├── server/                  # FastAPI Application
 │   ├── app/
 │   │   ├── main.py           # API Router & Entrypoint
 │   │   ├── schemas.py        # Pydantic validation models
 │   │   └── database.py       # DB connection and models
 │   └── requirements.txt      # Python dependencies
 │
-└── frontend/                 # React SPA
+└── client/                 # React SPA
     ├── src/
     │   ├── components/       # TemperatureChart, StatsCards, etc.
     │   ├── types/            # TypeScript interface definitions
